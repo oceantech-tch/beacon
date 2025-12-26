@@ -1,0 +1,47 @@
+button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
+  border: none;
+}
+
+.primary {
+  background: #111;
+  color: #fff;
+}
+
+.primary:hover {
+  background: #000;
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #111;
+}
+
+.outline:hover {
+  background: #f1f1f1;
+}
+
+.danger {
+  background: #d9534f;
+  color: #fff;
+}
+
+.danger:hover {
+  background: #c64542;
+}
+
+.small {
+  width: auto;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

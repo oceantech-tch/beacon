@@ -1,0 +1,53 @@
+.gshock-loader {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner rotating red ring */
+.gshock-ring {
+  width: 52px;
+  height: 52px;
+  border: 4px solid rgba(255, 0, 0, 0.25);
+  border-top-color: #ff2b2b; /* G-Shock red */
+  border-radius: 50%;
+  animation: gshock-spin 0.9s linear infinite;
+}
+
+/* Outer square bezel */
+.gshock-square {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 3px solid #ff2b2b;
+  border-radius: 6px;
+  animation: gshock-pulse 1.2s ease-in-out infinite;
+  box-sizing: border-box;
+}
+
+/* Spin animation */
+@keyframes gshock-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Slight pulse animation */
+@keyframes gshock-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+}

@@ -1,0 +1,38 @@
+.login-wrap {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.login-sub {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.login-card {
+  display: flex;
+  justify-content: center;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: #fafafa;
+  border: 1px solid #eee;
+}
+
+.login-foot {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-foot-link {
+  margin-left: 4px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+}

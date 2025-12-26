@@ -1,0 +1,23 @@
+.ps-load {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ps-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ps-card {
+  padding: 1.2rem;
+  margin-top: 1rem;
+}
+
+.ps-note {
+  margin-top: 1.5rem;
+  color: #777;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

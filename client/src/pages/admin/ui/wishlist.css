@@ -1,0 +1,52 @@
+.wish-loading {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wish-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.wish-sub {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.6rem;
+  line-height: 1.4;
+}
+
+.wish-section {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.wish-empty {
+  margin-top: 0.8rem;
+  color: #888;
+}
+
+.wish-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wish-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wish-model {
+  font-weight: 500;
+}
+
+.wish-actions {
+  display: flex;
+  gap: 8px;
+}

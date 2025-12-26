@@ -1,0 +1,103 @@
+.wi-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.wi-sub {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.wi-loader {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.wi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+/* row inside each card */
+.wi-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wi-model {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.wi-count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* actions */
+.wi-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* drill panel */
+.wi-panel {
+  margin-top: 1rem;
+}
+
+.wi-panel-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.wi-no-users {
+  color: #777;
+  margin-top: 8px;
+}
+
+/* user row */
+.wi-users .wi-user-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wi-user-name {
+  font-weight: 600;
+}
+
+.wi-user-email {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.wi-error {
+  margin-top: 12px;
+  color: #a30000;
+  background: #ffecec;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.wi-card.fulfilled {
+  opacity: 0.45;
+  pointer-events: none; /* disable actions visually; keep them disabled so admin cannot re-notify */
+  filter: grayscale(20%);
+}
+
+.wi-fulfilled-label {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #444;
+  background: #f5f5f5;
+  padding: 6px 8px;
+  border-radius: 8px;
+  display: inline-block;
+}
