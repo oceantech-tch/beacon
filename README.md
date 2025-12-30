@@ -1,127 +1,151 @@
-# Beacon (MVP)
+# Beacon — Wishlist Notification System (MVP)
 
-A full-stack MVP built to explore how wishlist-driven notifications can reduce manual inquiries for product availability.
+Beacon is a full-stack MVP built to explore how wishlist-driven notifications can reduce manual product availability inquiries for social-commerce sellers.
 
-This project simulates a real-world workflow where users register interest in specific G-Shock models, and an admin notifies interested users when products become available.
+The system was designed around a real workflow used by Instagram watch resellers, where customer demand is tracked *before* inventory arrives, and notifications are sent only when supply becomes available.
 
-The focus of this MVP is **product logic, authentication flow, and admin–user interaction**, not UI polish.
+This project prioritizes **backend correctness, authentication design, and admin–user interaction** over UI polish or monetization features.
 
 ---
 
-## Overview
+## Problem Context
 
-Many resale businesses receive repeated DMs asking about product availability.  
-This MVP proposes a simple alternative:
+Small resellers often receive repeated DMs asking about product availability:
 
-- Users add products they want to a wishlist  
-- Admin uploads a product when it becomes available  
-- Users who wishlisted that product are automatically notified via email  
+- “Do you have model X?”
+- “Any restock coming?”
+- “Can you notify me if this arrives?”
 
-The system tracks demand first, then responds when supply arrives.
+These requests are usually tracked manually — or not at all.
+
+When stock finally arrives:
+- Sellers forget who asked
+- Notifications are inconsistent
+- There’s no visibility into which products are actually in demand
+
+Beacon introduces structure **without changing the seller’s existing sales flow**.
+
+---
+
+## Core Workflow
+
+1. Users add specific product models to a wishlist
+2. Admin uploads a product when inventory becomes available
+3. Users who wishlisted that model are notified automatically via email
+4. The product is disabled after notification to prevent duplicate alerts
+
+This creates a simple but reliable loop:
+
+> Track demand → respond when supply arrives
 
 ---
 
 ## Features
 
-### User Features
-- User authentication
-- Add G-Shock models to a personal wishlist
-- Remove models from wishlist
-- View product details when available
-- Receive email notification when a wishlisted product is uploaded
+### User
+- Google-based authentication
+- Add and remove products from a personal wishlist
+- View wishlist and product availability
+- Receive email notification when a matching product is uploaded
+- No checkout or payment flow (intentional)
 
-### Admin Features
-- Admin authentication
-- Upload new products
-- Notify users who wishlisted a product
-- View wishlist insights (models + interest count)
-- View users interested in a specific model
-- Disable products after notification to prevent duplicate alerts
-
----
-
-## Wishlist Insights
-
-The admin dashboard includes a **Wishlist Insights** page that displays:
-
-- All wishlisted models
-- Number of users requesting each model
-- Drill-down view of users interested in a selected model
-
-The insights page auto-refreshes periodically without resetting the UI state.
+### Admin
+- JWT-protected admin authentication
+- Upload products with metadata (model, price, condition, image)
+- Trigger notifications to matching users on upload
+- Disable products after notification to prevent re-sending
+- View **Wishlist Insights**:
+  - Aggregated models users want
+  - Interest count per model
+  - Drill-down view of users per model
+  - Auto-refreshing insights without breaking UI state
 
 ---
 
 ## Email Notifications
 
-- Email notifications are sent using **SendGrid**
-- Users receive alerts when a wishlisted product is uploaded
-- After notification, the product is marked as disabled to prevent re-notification
+- Email delivery handled via **SendGrid**
+- Notifications are sent only once per product
+- Email logic is isolated and provider-agnostic
 
 ---
 
-## Tech Stack
+## Technical Stack
 
 ### Frontend
 - React
-- TypeScript
-- React Router
-- Axios
-- Context API
+- **TypeScript**
 - Vite
+- React Router
+- Context API
+- Axios
 
 ### Backend
 - Node.js
 - Express
-- TypeScript
+- **TypeScript**
 - MongoDB (Mongoose)
-- JWT Authentication
-- SendGrid (Email Service)
+- JWT authentication
+- SendGrid (email service)
 
 ---
 
 ## Project Structure
 
-/client   → React frontend
-/server   → Express + MongoDB backend
+`/client`   → React + TypeScript frontend<br /><br />
+`/server`   → Express + MongoDB backend <br />
 
-Frontend and backend are deployed separately.
+Frontend and backend are developed and deployed independently.
 
 ---
 
-## Authentication Model
+## Authentication & Authorization
 
 - JWT-based authentication
-- Separate access control for users and admin
-- Protected routes on frontend and backend
-- Session restoration via localStorage on refresh
+- Separate access paths for users and admin
+- Protected routes enforced on both frontend and backend
+- Session restoration via `localStorage`
+- Authorization enforced at the API level, not the UI
 
 ---
 
-## Design Philosophy
+## Design Decisions & Tradeoffs
 
-This MVP prioritizes:
+- **No payments or checkout**
+  Focus was kept on demand tracking and notifications, not ecommerce.
 
-- Clear data flow
-- Correct authorization
-- Realistic admin workflows
-- Scalable backend logic
+- **No public storefront**
+  The system supports existing DM-based sales workflows.
 
-The goal was to build something **functional, testable, and close to a real business use-case**, not a marketing demo.
+- **MVP-level UI**
+  Effort was prioritized on backend logic and correctness.
+
+These decisions were made intentionally to avoid over-engineering.
 
 ---
 
-## Status
+## Current Status
 
-This project is an MVP.
+- Core flows implemented end-to-end
+- Email notifications are live (not sandboxed)
+- Admin and user roles fully separated
+- Stable MVP suitable for validation and demonstration
 
-The current implementation fully demonstrates the core flow:
+---
 
-> Track demand → upload supply → notify users.
+## Why This Project Exists
+
+Beacon was built to demonstrate:
+
+- Translating real business problems into software
+- MVP scoping and trade-off decisions
+- Full-stack execution with TypeScript
+- Authentication, authorization, and notifications
+- Knowing when **not** to add features
 
 ---
 
 ## Notes
 
-- Built as a practical exploration, not a commercial product 
+- Built as a portfolio MVP, not a commercial product
 - <strong role="alert">Brand names are used strictly for demonstration purposes</strong>
