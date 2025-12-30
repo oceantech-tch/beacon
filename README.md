@@ -29,17 +29,10 @@ Beacon introduces structure **without changing the seller’s existing sales flo
 
 ## Core Workflow
 
-<<<<<<< HEAD
 1. Users add specific product models to a wishlist
 2. Admin uploads a product when inventory becomes available
 3. Users who wishlisted that model are notified automatically via email
 4. The product is disabled after notification to prevent duplicate alerts
-=======
-1. Users add specific product models to a wishlist  
-2. Admin uploads a product when inventory becomes available  
-3. Users who wishlisted that model are notified automatically via email  
-4. The product is disabled after notification to prevent duplicate alerts  
->>>>>>> 0d26dda5c00c2303eb88ac05098725e1dd8e46c7
 
 This creates a simple but reliable loop:
 
@@ -99,13 +92,8 @@ This creates a simple but reliable loop:
 
 ## Project Structure
 
-<<<<<<< HEAD
-`/client`   → React + TypeScript frontend<br /><br />
+`/client`   → React + TypeScript frontend <br /><br />
 `/server`   → Express + MongoDB backend <br />
-=======
-`/client`   → React + TypeScript frontend
-`/server`   → Express + MongoDB backend
->>>>>>> 0d26dda5c00c2303eb88ac05098725e1dd8e46c7
 
 Frontend and backend are developed and deployed independently.
 
@@ -123,7 +111,6 @@ Frontend and backend are developed and deployed independently.
 
 ## Design Decisions & Tradeoffs
 
-<<<<<<< HEAD
 - **No payments or checkout**
   Focus was kept on demand tracking and notifications, not ecommerce.
 
@@ -131,15 +118,6 @@ Frontend and backend are developed and deployed independently.
   The system supports existing DM-based sales workflows.
 
 - **MVP-level UI**
-=======
-- **No payments or checkout**  
-  Focus was kept on demand tracking and notifications, not ecommerce.
-
-- **No public storefront**  
-  The system supports existing DM-based sales workflows.
-
-- **MVP-level UI**  
->>>>>>> 0d26dda5c00c2303eb88ac05098725e1dd8e46c7
   Effort was prioritized on backend logic and correctness.
 
 These decisions were made intentionally to avoid over-engineering.
@@ -170,8 +148,4 @@ Beacon was built to demonstrate:
 ## Notes
 
 - Built as a portfolio MVP, not a commercial product
-<<<<<<< HEAD
 - <strong role="alert">Brand names are used strictly for demonstration purposes</strong>
-=======
-- <strong role="alert">Brand names are used strictly for demonstration purposes</strong>
->>>>>>> 0d26dda5c00c2303eb88ac05098725e1dd8e46c7
